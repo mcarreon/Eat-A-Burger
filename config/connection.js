@@ -18,7 +18,7 @@ connection.connect(function (err) {
     }
     console.log("Connected with ID " + connection.threadID);
 
-    connection.query("SELECT * FROM burgers", function (err, results) {console.log(results);});
+    
 });
 
 //-----Exporting Connection-----
