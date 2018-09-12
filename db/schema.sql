@@ -10,3 +10,5 @@ CREATE TABLE burgers(
     devoured BOOLEAN DEFAULT false,
     PRIMARY KEY (id)
 );
+
+CREATE DATABASE test_db;
