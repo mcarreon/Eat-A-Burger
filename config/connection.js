@@ -5,6 +5,7 @@ var connection;
 
 if (process.env.JAWSDB_URL) {
     connection = mysql.createConnection(process.env.JAWSDB_URL);
+    console.log('Using JAWSDB');
 }
 else {
     connection = mysql.createConnection({
@@ -26,11 +27,6 @@ connection.connect(function (err) {
         return;
     }
     console.log("Connected with ID " + connection.threadId);
-
-    connection.query("SELECT * FROM burgers;", function(err, data) {
-        if (err) { throw err }
-        console.log(data);
-    })
 });
 
 //-----Exporting Connection-----

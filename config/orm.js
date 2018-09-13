@@ -25,8 +25,21 @@ var orm = {
             callback(data);
         });
     },
-    insertOne: function () {},
-    updateOne: function () {}
+    insertOne: function (burgerName, callback) {
+        connection.query('INSERT INTO burgers (burger_name) VALUES (?)', burgerName, function (err, data) {
+            if (err) throw err;
+
+            callback(data);
+        });
+    },
+    updateOne: function (burgerID, callback) {
+        connection.query('UPDATE burgers SET devoured = 1 WHERE id = ?', burgerID, function(err, data) {
+            console.log("Updating burger with id: " + burgerID);
+            if (err) throw err;
+            
+            callback(data);
+        })
+    }
 }
 
 module.exports = orm;
