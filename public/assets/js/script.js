@@ -3,19 +3,22 @@ $(document).ready(function() {
     $("#burger-btn").on("click", function (e) {
         //console.log('test');
         e.preventDefault();
-        
 
         var newBurger = {
             burger_name: $("#burger-input").val().trim()
         }
 
-        $.ajax("/api/burgers", {
-            type: "POST",
-            data: newBurger
-        })
-        .then(function() {
-            location.reload();
-        });
+        if (burger_name != '') {
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+            })
+            .then(function() {
+                location.reload();
+            });
+        }
+
+        
     });
 
     $(".eat-btn").on("click", function (e) {
