@@ -1,9 +1,13 @@
 var orm = require("../config/orm.js");
 
 var burger = {
-    selectAll: function () {},
-    insertOne: function () {},
-    updateOne: function () {}
+    showAllBurger: function (callback) {
+        orm.selectAll(function(data) {
+            callback(data);
+        });
+    },
+    insertBurger: function () {},
+    eatOneBurger: function () {}
 }
 
 module.exports = burger;

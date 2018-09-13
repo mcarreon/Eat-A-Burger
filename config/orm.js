@@ -18,7 +18,13 @@ function printQuestionMarks(num) {
 
 
 var orm = {
-    selectAll: function () {},
+    selectAll: function (callback) {
+        connection.query('SELECT * FROM burgers;', function (err, data) {
+            if (err) throw err;
+
+            callback(data);
+        });
+    },
     insertOne: function () {},
     updateOne: function () {}
 }

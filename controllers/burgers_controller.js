@@ -1,14 +1,9 @@
 var express = require("express");
+var router = express.Router();
 var burger = require("../models/burger.js");
 
-var router = express.Router();
-
-
-
-module.exports = router;
-
 router.get("/", function(req, res) {
-    burger.all(function(data) {
+    burger.showAllBurger(function(data) {
         var hbsObject = {
             burgers: data
         };        
@@ -17,3 +12,6 @@ router.get("/", function(req, res) {
     });
 });
 
+
+
+module.exports = router;

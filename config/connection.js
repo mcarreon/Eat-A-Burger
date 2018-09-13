@@ -25,7 +25,7 @@ connection.connect(function (err) {
         console.error("Error Connecting: " + err.stack);
         return;
     }
-    console.log("Connected with ID " + connection.threadID);
+    console.log("Connected with ID " + connection.threadId);
 
     connection.query("SELECT * FROM burgers;", function(err, data) {
         if (err) { throw err }
