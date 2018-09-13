@@ -1,35 +1,47 @@
 
 <div class="container">
-    <div class="img-container">
-        <img src="assets/img/burger.png" width="225px" alt="This is a Burger!" >
-    </div>
     
-    <h1>Eat Da Burger!</h1>
-    
-    <div>
-        <div class="available-burgers">
-            <h2>Available Burgers</h2>
-                {{#each burgers}}
-                    <li>
-                        {{burger_name}}
-                    </li>
-                {{/each}}
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10 text-center">
+            <div class="img-container mt-3">
+                <img src="assets/img/burger.png" width="225px" alt="This is a Burger!" >
+            </div>
+            
+            <h1>Eat Da Burger!</h1>
+            
+            <div class="container mt-5">
+                
+                <div class="row">
+                    <div class="available-burgers col-6">
+                        <h2>Available Burgers</h2>
+                            {{#each availableBurgers}}
+                                <li>
+                                    {{burger_name}}
+                                </li>
+                            {{/each}}
+                    </div>
+                    <div class="memory-of-burgers col-6">
+                        <h2>Burgers From The Past</h2>
+                            {{#each oldBurgers}}
+                                <li>
+                                    {{burger_name}}
+                                </li>
+                            {{/each}}
+                    </div>
+                </div>
+
+            </div>
+            
+            <form class="burger-form mt-5">
+                <label for="burger-input">Add a delicious burger!</label><br>
+                <input type="text" id="burger-input"><br>
+                <button type="submit" class="btn btn-primary mt-3">Cook your burger!</button>
+            </form>
         </div>
-        <div class="memory-of-burgers">
-            <h2>Burgers From The Past</h2>
-                {{#each burgers}}
-                    <li>
-                        {{burger_name}}
-                    </li>
-                {{/each}}
-        </div>
+        <div class="col-1"></div>
     </div>
-    
-    <form class="burger-form">
-        <label for="burger-input">Add a delicious burger!</label><br>
-        <input type="text" id="burger-input"><br>
-        <button type="submit">Cook your burger!</button>
-    </form>
+
 </div>
 
 <script>
