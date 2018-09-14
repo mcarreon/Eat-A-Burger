@@ -7,6 +7,11 @@ var burger = {
             callback(data);
         });
     },
+    selectOneBurger: function(burgerID, callback) {
+        orm.selectOne(burgerID, function(data) {
+            callback(data);
+        });
+    },
     insertBurger: function (burgerName, callback) {
         orm.insertOne(burgerName, function(data) {
             callback(data);

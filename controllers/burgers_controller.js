@@ -47,7 +47,28 @@ router.put("/api/burgers/:id", function(req, res) {
         if (data.changedRows === 0) {
             return res.status(404).end();
         }    
+        
         res.status(200).end();
+    });
+});
+
+//api get routes
+router.get("/api/burgers", function(req, res) {
+    burger.showAllBurger(function(data) {
+        res.json(data);
+        res.status(200).end();
+    });
+});
+
+router.get("/api/burgers/:id", function(req, res) {
+    burger.selectOneBurger(req.params.id ,function(data) {
+        if (data.length === 0) {
+            res.status(404).end();
+        }
+        else {
+            res.json(data);
+            res.status(200).end();
+        }
     });
 });
 

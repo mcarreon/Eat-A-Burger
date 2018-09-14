@@ -25,6 +25,13 @@ var orm = {
             callback(data);
         });
     },
+    selectOne: function (burgerID, callback) {
+        connection.query('SELECT * FROM burgers WHERE id = ?', burgerID, function (err, data) {
+           if (err) throw err;
+           
+           callback(data);
+        });
+    },
     insertOne: function (burgerName, callback) {
         connection.query('INSERT INTO burgers (burger_name) VALUES (?)', burgerName, function (err, data) {
             if (err) throw err;
